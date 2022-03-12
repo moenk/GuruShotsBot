@@ -57,7 +57,7 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="CloseProposals" sap:VirtualizedContainerService.HintSize="604,1010" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -80,7 +80,7 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:UiElementExists DisplayName="Element Exists 'push button  '" Exists="[boolClose]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
             <ui:UiElementExists.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2e4b5f21-d433-4c45-9bf3-e6952e86cdae" InformativeScreenshot="f18b44e93cde0d9b59427af79fd38f4d" Selector="&lt;wnd app='chrome.exe' title='My Challenges*' /&gt;&lt;ctrl name='My Challenges' role='document' /&gt;&lt;ctrl role='push button' aastate='markierbar, opaque' name='' /&gt;" TimeoutMS="2000">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2e4b5f21-d433-4c45-9bf3-e6952e86cdae" InformativeScreenshot="f18b44e93cde0d9b59427af79fd38f4d" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl aria-role='button' parentid='page' class='icon-close' /&gt;" TimeoutMS="2000">
                 <ui:Target.WaitForReady>
                   <InArgument x:TypeArguments="ui:WaitForReady" />
                 </ui:Target.WaitForReady>
@@ -107,7 +107,7 @@
                     </ui:CursorPosition>
                   </ui:Click.CursorPosition>
                   <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="44745d0a-2d4d-469c-a04f-87b4f138e730" InformativeScreenshot="1cf87fa2e802faca536a52b2c84863c9" Selector="&lt;wnd app='chrome.exe' title='My Challenges*' /&gt;&lt;ctrl name='My Challenges' role='document' /&gt;&lt;ctrl role='push button' aastate='markierbar, opaque' name='' /&gt;">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="44745d0a-2d4d-469c-a04f-87b4f138e730" InformativeScreenshot="1cf87fa2e802faca536a52b2c84863c9" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl aria-role='button' parentid='page' class='icon-close' /&gt;">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
