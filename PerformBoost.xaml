@@ -119,7 +119,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4c7564b9-ab9a-47dd-839c-34e418f93369" InformativeScreenshot="388a44f3a39ada0715841b9ac9bc1f80" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl aria-role='button' parentid='dialogContent_*' tag='DIV' class='c-modal-boost__photo loaded' parentclass='wGhr0s' idx='1' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4c7564b9-ab9a-47dd-839c-34e418f93369" InformativeScreenshot="388a44f3a39ada0715841b9ac9bc1f80" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl aria-role='button' parentid='dialogContent_*' tag='DIV' class='c-modal-boost__photo loaded' idx='1' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
