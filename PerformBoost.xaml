@@ -66,10 +66,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[boolCanBoost]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c19d5c0c-ecc5-45f6-b226-bcbeb1da576e" InformativeScreenshot="e293f2fd928fcfe1f51391ae4160af71" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl tag='DIV' class='challenge-action-button__content__boost-state__available' parentclass='challenge-action-button__content__boost-state' title='My Challenges' idx='*' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c19d5c0c-ecc5-45f6-b226-bcbeb1da576e" InformativeScreenshot="e293f2fd928fcfe1f51391ae4160af71" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl tag='DIV' class='challenge-action-button__content__boost-state__available' parentclass='challenge-action-button__content__boost-state' title='My Challenges' idx='*' /&gt;" TimeoutMS="3000">
           <ui:Target.WaitForReady>
             <InArgument x:TypeArguments="ui:WaitForReady" />
           </ui:Target.WaitForReady>
