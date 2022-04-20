@@ -147,7 +147,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="86ccd5d9-efcb-491d-aa46-e0f32ebb5c3b" InformativeScreenshot="1ab00f633dc5d5a2c2ff0177e07713b4" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl aaname='LET&amp;apos;S GO' parentid='gs-app-main' tag='DIV' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="86ccd5d9-efcb-491d-aa46-e0f32ebb5c3b" InformativeScreenshot="1ab00f633dc5d5a2c2ff0177e07713b4" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl aaname='LET&amp;apos;S GO' parentid='gs-app-main' tag='DIV' /&gt;" TimeoutMS="8000" WaitForReady="COMPLETE" />
             </ui:Click.Target>
           </ui:Click>
           <ui:FindChildren Children="[uiPhotos]" DisplayName="Find Children 'DIV'" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
@@ -175,7 +175,7 @@
               <InArgument x:TypeArguments="x:Int32">0</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="412,715" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+          <ui:InterruptibleDoWhile Condition="[(intZaehler &lt; intAnzahlGrundmenge) and (dblMeter &lt; 100.0)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="412,715" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
             <ui:InterruptibleDoWhile.Body>
               <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,550" sap2010:WorkflowViewState.IdRef="Sequence_12">
                 <sap:WorkflowViewStateService.ViewState>
@@ -208,9 +208,7 @@
                 </ui:Click>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetExporsure workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="GetExporsure.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <OutArgument x:TypeArguments="x:Double" x:Key="dblMeter">
-                      <mva:VisualBasicReference x:TypeArguments="x:Double" ExpressionText="dblMeter" />
-                    </OutArgument>
+                    <OutArgument x:TypeArguments="x:Double" x:Key="dblMeter">[dblMeter]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
@@ -223,9 +221,6 @@
                 </Assign>
               </Sequence>
             </ui:InterruptibleDoWhile.Body>
-            <ui:InterruptibleDoWhile.Condition>
-              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="(intZaehler &lt; intAnzahlGrundmenge) and (dblMeter &lt; 100.0)" />
-            </ui:InterruptibleDoWhile.Condition>
           </ui:InterruptibleDoWhile>
           <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" CursorMotionType="Smooth" DelayBefore="2000" DisplayName="Click 'push button  SUBMIT VOTE'" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
             <ui:Click.CursorPosition>
