@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CloseProposals" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1054,1075" sap2010:WorkflowViewState.IdRef="CloseProposals_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CloseProposals" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1054,1106" sap2010:WorkflowViewState.IdRef="CloseProposals_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
       <x:String>System.Activities</x:String>
@@ -58,9 +58,10 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CloseProposals" sap:VirtualizedContainerService.HintSize="604,1010" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CloseProposals" sap:VirtualizedContainerService.HintSize="604,1041" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="boolClose" />
     </Sequence.Variables>
@@ -69,8 +70,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Close proposals...&quot;]" />
-    <ui:InterruptibleDoWhile Condition="[boolClose]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="562,787" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Close Proposals...&quot;]" />
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="close all normal info" Condition="[boolClose]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="562,818" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
         <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,622" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -80,7 +81,7 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:UiElementExists DisplayName="Element Exists 'push button  '" Exists="[boolClose]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
             <ui:UiElementExists.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2e4b5f21-d433-4c45-9bf3-e6952e86cdae" InformativeScreenshot="f18b44e93cde0d9b59427af79fd38f4d" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl aria-role='button' parentid='page' class='*close' /&gt;" TimeoutMS="2000">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2e4b5f21-d433-4c45-9bf3-e6952e86cdae" InformativeScreenshot="f18b44e93cde0d9b59427af79fd38f4d" Selector="&lt;html app='chrome.exe' omit:title='My Challenges' /&gt;&lt;webctrl aria-role='button' parentid='page' class='*close' /&gt;" TimeoutMS="2000">
                 <ui:Target.WaitForReady>
                   <InArgument x:TypeArguments="ui:WaitForReady" />
                 </ui:Target.WaitForReady>
@@ -107,7 +108,7 @@
                     </ui:CursorPosition>
                   </ui:Click.CursorPosition>
                   <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="44745d0a-2d4d-469c-a04f-87b4f138e730" InformativeScreenshot="1cf87fa2e802faca536a52b2c84863c9" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl aria-role='button' parentid='page' class='*close' /&gt;">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="44745d0a-2d4d-469c-a04f-87b4f138e730" InformativeScreenshot="1cf87fa2e802faca536a52b2c84863c9" Selector="&lt;html app='chrome.exe' omit:title='My Challenges' /&gt;&lt;webctrl aria-role='button' parentid='page' class='*close' /&gt;">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -122,6 +123,11 @@
           </If>
         </Sequence>
       </ui:InterruptibleDoWhile.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:InterruptibleDoWhile>
   </Sequence>
 </Activity>

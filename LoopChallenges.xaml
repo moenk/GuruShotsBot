@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="LoopChallenges" sap:VirtualizedContainerService.HintSize="1054,4064" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="LoopChallenges" sap:VirtualizedContainerService.HintSize="1054,4065" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
       <x:String>System.Activities</x:String>
@@ -29,7 +29,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="56">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="29">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -58,31 +58,25 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LoopChallenges" sap:VirtualizedContainerService.HintSize="756,3999" sap2010:WorkflowViewState.IdRef="Sequence_11">
+  <Sequence DisplayName="LoopChallenges" sap:VirtualizedContainerService.HintSize="756,4000" sap2010:WorkflowViewState.IdRef="Sequence_11">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strTitle" />
       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="uiChildren" />
       <Variable x:TypeArguments="x:Double" Name="dblMeter" />
-      <Variable x:TypeArguments="x:String" Name="strRemaining" />
-      <Variable x:TypeArguments="x:Int32" Name="intRemaining" />
-      <Variable x:TypeArguments="s:String[]" Name="arrTrafficTimes" />
       <Variable x:TypeArguments="x:String" Name="strHour" />
+      <Variable x:TypeArguments="x:String" Name="strRemaining" />
+      <Variable x:TypeArguments="x:Int32" Name="intSecRemaining" />
+      <Variable x:TypeArguments="x:String" Name="strEndTime" />
+      <Variable x:TypeArguments="x:Int32" Name="intHrsRemaining" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="714,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-      <Assign.To>
-        <OutArgument x:TypeArguments="s:String[]">[arrTrafficTimes]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="s:String[]">[{"06", "07", "18", "19", "23"}]</InArgument>
-      </Assign.Value>
-    </Assign>
     <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="714,372" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
@@ -94,7 +88,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:FindChildren Children="[uiChildren]" DisplayName="Find Children 'DIV'" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
               <ui:FindChildren.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="64c03e96-4a85-467f-ac5a-55b60d267e29" InformativeScreenshot="3a59a341ecc40776c1ad7462b0ee8197" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl parentid='page' tag='DIV' class='my-challenges__items gs-m-t-*' title='My Challenges' /&gt;" WaitForReady="COMPLETE">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="64c03e96-4a85-467f-ac5a-55b60d267e29" InformativeScreenshot="3a59a341ecc40776c1ad7462b0ee8197" Selector="&lt;html app='chrome.exe' /&gt;&lt;webctrl parentid='page' tag='DIV' class='my-challenges__items gs-m-t-*' /&gt;" WaitForReady="COMPLETE">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -108,13 +102,13 @@
         <ActivityFunc x:TypeArguments="x:Boolean" />
       </ui:RetryScope.Condition>
     </ui:RetryScope>
-    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="714,3395" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[uiChildren]">
+    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="714,3464" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[uiChildren]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="ui:UiElement">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:UiElement" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="678,3271" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="678,3340" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -155,9 +149,9 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[item.Get(&quot;class&quot;).ToString.Contains(&quot;item__title__days&quot;)]" sap:VirtualizedContainerService.HintSize="636,726" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[item.Get(&quot;class&quot;).ToString.Contains(&quot;item__title__days&quot;)]" sap:VirtualizedContainerService.HintSize="636,795" sap2010:WorkflowViewState.IdRef="If_4">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,539" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,608" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -178,13 +172,28 @@
                       </ui:Target>
                     </ui:GetAttribute.Target>
                   </ui:GetAttribute>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[strRemaining]" />
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ParseRemaining workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ParseRemaining.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="strRemaining">[strRemaining]</InArgument>
-                      <OutArgument x:TypeArguments="x:Int32" x:Key="intRemaining">[intRemaining]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32" x:Key="intRemaining">[intSecRemaining]</OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
+                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strEndTime]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[Date.Now.AddSeconds(intSecRemaining).ToString("s")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[intHrsRemaining]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[intSecRemaining \ 3600]</InArgument>
+                    </Assign.Value>
+                  </Assign>
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -221,7 +230,7 @@
                       <InArgument x:TypeArguments="x:Double">[(dblMeter+90)/1.8]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[strTitle + &quot;: &quot; + dblMeter.ToString + &quot;%, &quot; + intRemaining.ToString + &quot; sec.&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[strTitle + &quot;: &quot; + dblMeter.ToString + &quot;%, &quot; + strEndTime]" />
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -256,7 +265,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If sap2010:Annotation.AnnotationText="only in traffic times when the end is more than 4 hours away" Condition="[(arrTrafficTimes.contains(strHour)) and (intRemaining &gt; 4*3600)]" sap:VirtualizedContainerService.HintSize="516,849" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If sap2010:Annotation.AnnotationText="end is more than 12 hours away" Condition="[(intHrsRemaining &gt; 0)  and (intHrsRemaining MOD 12 = 0)]" sap:VirtualizedContainerService.HintSize="516,849" sap2010:WorkflowViewState.IdRef="If_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -301,7 +310,7 @@
                                 </ui:Click>
                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke VoteSome workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="VoteNormal.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
-                                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                    <InArgument x:TypeArguments="x:Int32" x:Key="intMaxVotes">50</InArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
                               </Sequence>

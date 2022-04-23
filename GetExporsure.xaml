@@ -73,7 +73,7 @@
         <OutArgument x:TypeArguments="x:String">[strStyle]</OutArgument>
       </ui:GetAttribute.Result>
       <ui:GetAttribute.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d0d7f175-64a5-4c08-9acb-e890267ef621" InformativeScreenshot="d85a2c89d98288ef023f954719bed03c" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl tag='DIV' class='modal-vote__exposure-meter' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d0d7f175-64a5-4c08-9acb-e890267ef621" InformativeScreenshot="d85a2c89d98288ef023f954719bed03c" Selector="&lt;html app='chrome.exe' omit:title='My Challenges' /&gt;&lt;webctrl tag='DIV' class='modal-vote__exposure-meter' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>

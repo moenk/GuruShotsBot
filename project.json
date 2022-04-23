@@ -3,7 +3,6 @@
   "description": "Blank Process",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.12.3]",
     "UiPath.System.Activities": "[22.4.0]",
     "UiPath.UIAutomation.Activities": "[21.10.5]"
   },
@@ -11,7 +10,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.10.5.0",
-  "projectVersion": "1.1.6",
+  "projectVersion": "1.1.15",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,

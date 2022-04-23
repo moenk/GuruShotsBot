@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CheckEndgame" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1057,2179" sap2010:WorkflowViewState.IdRef="CheckEndgame_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CheckEndgame" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1161,2467" sap2010:WorkflowViewState.IdRef="CheckEndgame_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
       <x:String>System.Activities</x:String>
@@ -64,7 +64,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="required sorted by end date for checking next challenge to go to the endgame mode" DisplayName="CheckEndgame" sap:VirtualizedContainerService.HintSize="1067,2114" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="required sorted by end date for checking next challenge to go to the endgame mode" DisplayName="CheckEndgame" sap:VirtualizedContainerService.HintSize="1171,2402" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strRemaining" />
       <Variable x:TypeArguments="x:Int32" Name="intRemaining" />
@@ -75,16 +75,16 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1025,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Check Endgame...&quot;]" />
-    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="loop while remaining between 10 and 30 minutes" Condition="[(intRemaining &gt; 60) and (intRemaining &lt;1800)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1025,1860" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1129,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Check Endgame...&quot;]" />
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="loop while remaining between 1 and 30 minutes" Condition="[(intRemaining &gt; 60) and (intRemaining &lt;1800)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1129,2148" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="989,1664" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1093,1952" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="947,518" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
+          <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1051,518" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
             <ui:RetryScope.ActivityBody>
               <ActivityAction>
                 <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="376,344" sap2010:WorkflowViewState.IdRef="Sequence_7">
@@ -134,55 +134,88 @@
               <ActivityFunc x:TypeArguments="x:Boolean" />
             </ui:RetryScope.Condition>
           </ui:RetryScope>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ParseRemaining workflow" sap:VirtualizedContainerService.HintSize="947,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ParseRemaining.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ParseRemaining workflow" sap:VirtualizedContainerService.HintSize="1051,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ParseRemaining.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="strRemaining">[strRemaining]</InArgument>
               <OutArgument x:TypeArguments="x:Int32" x:Key="intRemaining">[intRemaining]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="947,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Endgame: &quot; + intRemaining.ToString]" />
-          <If sap2010:Annotation.AnnotationText="vote under 10 minutes untik 1 minute while loop end" Condition="[intRemaining &lt; 600]" sap:VirtualizedContainerService.HintSize="947,731" sap2010:WorkflowViewState.IdRef="If_2">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1051,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Endgame: &quot; + intRemaining.ToString]" />
+          <If sap2010:Annotation.AnnotationText="vote under 10 minutes untik 1 minute while loop end" Condition="[intRemaining &lt; 600]" sap:VirtualizedContainerService.HintSize="1051,1019" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="376,543" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence sap:VirtualizedContainerService.HintSize="480,831" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Start Endgame Vote!&quot;]" />
-                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
-                  <ui:Click.CursorPosition>
-                    <ui:CursorPosition Position="Center">
-                      <ui:CursorPosition.OffsetX>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:CursorPosition.OffsetX>
-                      <ui:CursorPosition.OffsetY>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:CursorPosition.OffsetY>
-                    </ui:CursorPosition>
-                  </ui:Click.CursorPosition>
-                  <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5813f597-7dcd-452b-bc40-3e9aea491f60" InformativeScreenshot="b2de7ee18be8da35980e8a7ca80d58bd" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl aaname='VOTE' parentid='page' tag='SPAN' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:Click.Target>
-                </ui:Click>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke VoteNormal workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="VoteNormal.xaml">
-                  <ui:InvokeWorkflowFile.Arguments>
-                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
-                  </ui:InvokeWorkflowFile.Arguments>
-                </ui:InvokeWorkflowFile>
-                <Delay Duration="00:00:30" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Start Endgame Vote!&quot;]" />
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,608" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                  <TryCatch.Try>
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,381" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5813f597-7dcd-452b-bc40-3e9aea491f60" InformativeScreenshot="b2de7ee18be8da35980e8a7ca80d58bd" Selector="&lt;html app='chrome.exe' omit:title='My Challenges' /&gt;&lt;webctrl aaname='VOTE' parentid='page' tag='SPAN' /&gt;" TimeoutMS="10000">
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Add some Votest and Wait" DisplayName="Invoke VoteNormal workflow" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="VoteNormal.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="intMaxVotes">
+                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intRemaining \ 30" />
+                          </InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                    </Sequence>
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Warn" Message="[exception.Message]" />
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                  <TryCatch.Finally>
+                    <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                  </TryCatch.Finally>
+                </TryCatch>
               </Sequence>
             </If.Then>
             <If.Else>

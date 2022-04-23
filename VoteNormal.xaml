@@ -1,4 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="VoteSome" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1054,2283" sap2010:WorkflowViewState.IdRef="VoteSome_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="VoteSome" this:VoteSome.intMaxVotes="0" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="intMaxVotes" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1054,2662</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>VoteSome_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
       <x:String>System.Activities</x:String>
@@ -32,7 +40,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -62,7 +70,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="VoteSome" sap:VirtualizedContainerService.HintSize="917,2218" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="VoteSome" sap:VirtualizedContainerService.HintSize="989,2597" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="item" />
       <Variable x:TypeArguments="s:Random" Name="objRand" />
@@ -78,16 +86,16 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[boolClose]" sap:VirtualizedContainerService.HintSize="875,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+    <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[boolClose]" sap:VirtualizedContainerService.HintSize="947,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9925cf10-661e-4e12-a9b2-3f951fb96ca3" InformativeScreenshot="7a4573fe3242dc9d63451b1562437079" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl aaname='CLOSE     ' aria-role='button' omit:parentid='gs-app-main' tag='DIV' /&gt;" TimeoutMS="3000">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9925cf10-661e-4e12-a9b2-3f951fb96ca3" InformativeScreenshot="7a4573fe3242dc9d63451b1562437079" Selector="&lt;html app='chrome.exe' omit:title='My Challenges' /&gt;&lt;webctrl aaname='CLOSE     ' aria-role='button' omit:parentid='gs-app-main' tag='DIV' /&gt;" TimeoutMS="3000">
           <ui:Target.WaitForReady>
             <InArgument x:TypeArguments="ui:WaitForReady" />
           </ui:Target.WaitForReady>
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[boolClose]" sap:VirtualizedContainerService.HintSize="875,1980" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[boolClose]" sap:VirtualizedContainerService.HintSize="947,2359" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="376,329" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
@@ -108,7 +116,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="13c8ac01-6472-4ea3-b1dd-47f80d273382" InformativeScreenshot="7a4573fe3242dc9d63451b1562437079" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl aaname='CLOSE     ' aria-role='button' omit:parentid='gs-app-main' tag='DIV' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="13c8ac01-6472-4ea3-b1dd-47f80d273382" InformativeScreenshot="7a4573fe3242dc9d63451b1562437079" Selector="&lt;html app='chrome.exe' omit:title='My Challenges' /&gt;&lt;webctrl aaname='CLOSE     ' aria-role='button' omit:parentid='gs-app-main' tag='DIV' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -121,13 +129,13 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="454,1822" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence sap:VirtualizedContainerService.HintSize="526,2201" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="412,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="s:Random">[objRand]</OutArgument>
             </Assign.To>
@@ -135,7 +143,7 @@
               <InArgument x:TypeArguments="s:Random">[New Random()]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -147,19 +155,19 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="86ccd5d9-efcb-491d-aa46-e0f32ebb5c3b" InformativeScreenshot="1ab00f633dc5d5a2c2ff0177e07713b4" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl aaname='LET&amp;apos;S GO' parentid='gs-app-main' tag='DIV' /&gt;" TimeoutMS="8000" WaitForReady="COMPLETE" />
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="86ccd5d9-efcb-491d-aa46-e0f32ebb5c3b" InformativeScreenshot="1ab00f633dc5d5a2c2ff0177e07713b4" Selector="&lt;html app='chrome.exe' omit:title='My Challenges' /&gt;&lt;webctrl aaname='LET&amp;apos;S GO' parentid='gs-app-main' tag='DIV' /&gt;" TimeoutMS="8000" WaitForReady="COMPLETE" />
             </ui:Click.Target>
           </ui:Click>
-          <ui:FindChildren Children="[uiPhotos]" DisplayName="Find Children 'DIV'" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
+          <ui:FindChildren Children="[uiPhotos]" DisplayName="Find Children 'DIV'" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
             <ui:FindChildren.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="95d5f3a3-6fb2-4814-b386-6e1f86d163ad" InformativeScreenshot="0b99a528b2ea52153d6fb1c091ec7dbd" Selector="&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl parentid='gs-app-main' tag='DIV' class='modal-vote__photos' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="95d5f3a3-6fb2-4814-b386-6e1f86d163ad" InformativeScreenshot="0b99a528b2ea52153d6fb1c091ec7dbd" Selector="&lt;html app='chrome.exe' omit:title='My Challenges' /&gt;&lt;webctrl parentid='gs-app-main' tag='DIV' class='modal-vote__photos' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
               </ui:Target>
             </ui:FindChildren.Target>
           </ui:FindChildren>
-          <Assign sap:VirtualizedContainerService.HintSize="412,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[intAnzahlGrundmenge]</OutArgument>
             </Assign.To>
@@ -167,7 +175,35 @@
               <InArgument x:TypeArguments="x:Int32">[uiPhotos.Count]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign sap:VirtualizedContainerService.HintSize="412,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <If Condition="[intMaxVotes &gt; intAnzahlGrundmenge]" sap:VirtualizedContainerService.HintSize="484,339" sap2010:WorkflowViewState.IdRef="If_2">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[intMaxVotes]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[intAnzahlGrundmenge]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </If.Else>
+          </If>
+          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_5">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[intZaehler]</OutArgument>
             </Assign.To>
@@ -175,7 +211,7 @@
               <InArgument x:TypeArguments="x:Int32">0</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:InterruptibleDoWhile Condition="[(intZaehler &lt; intAnzahlGrundmenge) and (dblMeter &lt; 100.0)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="412,715" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+          <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[(intZaehler &lt; intMaxVotes) and (dblMeter &lt; 100.0)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="484,715" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
             <ui:InterruptibleDoWhile.Body>
               <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,550" sap2010:WorkflowViewState.IdRef="Sequence_12">
                 <sap:WorkflowViewStateService.ViewState>
@@ -203,7 +239,7 @@
                     </ui:CursorPosition>
                   </ui:Click.CursorPosition>
                   <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="47064316-25b3-4f12-add7-438dd9ec7cf2" InformativeScreenshot="d5223854209a3fb7397db11681a98932" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='My Challenges' /&gt;&lt;webctrl aria-role='button' parentid='vote-photo-{0}' tag='DIV' /&gt;&quot;, intAuswahl)]" TimeoutMS="3000" WaitForReady="COMPLETE" />
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="47064316-25b3-4f12-add7-438dd9ec7cf2" InformativeScreenshot="d5223854209a3fb7397db11681a98932" Selector="[String.Format(&quot;&lt;html app='chrome.exe' omit:title='My Challenges' /&gt;&lt;webctrl aria-role='button' parentid='vote-photo-{0}' tag='DIV' /&gt;&quot;, intAuswahl)]" TimeoutMS="3000" WaitForReady="COMPLETE" />
                   </ui:Click.Target>
                 </ui:Click>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetExporsure workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="GetExporsure.xaml">
@@ -222,7 +258,7 @@
               </Sequence>
             </ui:InterruptibleDoWhile.Body>
           </ui:InterruptibleDoWhile>
-          <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" CursorMotionType="Smooth" DelayBefore="2000" DisplayName="Click 'push button  SUBMIT VOTE'" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+          <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" CursorMotionType="Smooth" DelayBefore="2000" DisplayName="Click 'push button  SUBMIT VOTE'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -234,14 +270,14 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8124212-5e6b-4651-a40d-c147e4a91317" InformativeScreenshot="b6646ef7387f3ff797dd22aa9d1d8a46" Selector="&lt;wnd app='chrome.exe' omit:cls='Chrome_WidgetWin_1' title='My Challenges*' /&gt;&lt;ctrl name='My Challenges' role='document' /&gt;&lt;ctrl name='SUBMIT VOTE' role='push button' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8124212-5e6b-4651-a40d-c147e4a91317" InformativeScreenshot="b6646ef7387f3ff797dd22aa9d1d8a46" Selector="&lt;html app='chrome.exe' omit:title='GuruShots | The World&amp;apos;s Greatest Photo Game' /&gt;&lt;webctrl aaname='SUBMIT VOTE' parentid='gs-app-main' tag='SPAN' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
               </ui:Target>
             </ui:Click.Target>
           </ui:Click>
-          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  DONE'" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  DONE'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -253,14 +289,14 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="55ac82ba-9013-478e-91a9-8f6376a011ba" InformativeScreenshot="72bdbaa92e7667eea48b233a5346e549" Selector="&lt;wnd app='chrome.exe' omit:cls='Chrome_WidgetWin_1' title='My Challenges*' /&gt;&lt;ctrl name='My Challenges' role='document' /&gt;&lt;ctrl name='DONE' role='push button' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="55ac82ba-9013-478e-91a9-8f6376a011ba" InformativeScreenshot="72bdbaa92e7667eea48b233a5346e549" Selector="&lt;html app='chrome.exe' omit:title='GuruShots | The World&amp;apos;s Greatest Photo Game' /&gt;&lt;webctrl aaname='*Done*' aria-role='button' parentid='gs-app-main' tag='DIV' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
               </ui:Target>
             </ui:Click.Target>
           </ui:Click>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Voted: &quot; + intZaehler.ToString + &quot;/&quot; + intAnzahlGrundmenge.ToString]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Voted: &quot; + intZaehler.ToString + &quot;/&quot; + intAnzahlGrundmenge.ToString]" />
         </Sequence>
       </If.Else>
     </If>
