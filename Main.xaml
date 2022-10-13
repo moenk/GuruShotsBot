@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1054,2035" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1054,1349" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
       <x:String>System.Activities</x:String>
@@ -33,7 +33,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -61,43 +61,67 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="509,1005" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence sap:VirtualizedContainerService.HintSize="526,1284" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Browser" Name="uiBrowser" />
+      <Variable x:TypeArguments="x:Boolean" Name="boolEndgameDone" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke OpenWebsite workflow" sap:VirtualizedContainerService.HintSize="467,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="OpenWebsite.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke OpenWebsite workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="OpenWebsite.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="ui:Browser" x:Key="uiBrowser">[uiBrowser]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CloseProposals workflow" sap:VirtualizedContainerService.HintSize="467,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="CloseProposals.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CloseProposals workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="CloseProposals.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke PerformBoost workflow" sap:VirtualizedContainerService.HintSize="467,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="CheckBoost.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke PerformBoost workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="CheckBoost.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckEndgame workflow" sap:VirtualizedContainerService.HintSize="467,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="CheckEndgame.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckEndgame workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="CheckEndgame.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="boolEndgameDone">
+          <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolEndgameDone" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke LoopChallenges workflow" sap:VirtualizedContainerService.HintSize="467,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="LoopChallenges.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="467,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Close browser...&quot;]" />
-    <ui:CloseTab Browser="[uiBrowser]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="467,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+    <If Condition="[not boolEndgameDone]" sap:VirtualizedContainerService.HintSize="484,391" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke LoopChallenges workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="LoopChallenges.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Close browser...&quot;]" />
+    <ui:CloseTab Browser="[uiBrowser]" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
   </Sequence>
 </Activity>

@@ -54,5 +54,6 @@
   "UiPath.UIAutomationNext.Activities.ApplicationCard.RuntimeBrowser": "None",
   "UiPath.UIAutomationNext.Activities.ApplicationCard.WebDriverMode": "Disabled",
   "UiPath.UIAutomationNext.Activities.ApplicationCard.WebDriverAutoDownload": "True",
-  "UiPath.UIAutomationNext.Activities.Logging.AuditLogLevel": "Trace"
+  "UiPath.UIAutomationNext.Activities.Logging.AuditLogLevel": "Trace",
+  "UiPath.UIAutomationNext.Activities.KeyboardEvents.KeyboardShortcutsDelayBetweenKeys": "0.1"
 }
