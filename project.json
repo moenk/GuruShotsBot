@@ -3,14 +3,14 @@
   "description": "Blank Process",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.System.Activities": "[22.10.1]",
-    "UiPath.UIAutomation.Activities": "[22.10.1]"
+    "UiPath.System.Activities": "[22.10.3]",
+    "UiPath.UIAutomation.Activities": "[22.10.3]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.10.5.0",
-  "projectVersion": "1.1.25",
+  "projectVersion": "1.1.27",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
